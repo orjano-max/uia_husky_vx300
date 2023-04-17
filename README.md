@@ -2,7 +2,7 @@
 This repository can be used to set up an Interbotix vx300 manipulator with moveit configuration for collision avoidance with a Clearpath Husky UGV.
 
 <p align="center">
-<img src="Figures/husky_initiated.png" width=500 >
+<img src="husky_initiated.png" width=500 >
 </p>
 
 ## Installation
