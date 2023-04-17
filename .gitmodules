@@ -1,17 +1,17 @@
 [submodule "interbotix_ros_toolboxes"]
 	path = interbotix_ros_toolboxes
-
 	url = https://github.com/orjano-max/interbotix_ros_toolboxes
+
 [submodule "interbotix_ros_manipulators"]
 	path = interbotix_ros_manipulators
-
 	url = https://github.com/orjano-max/interbotix_ros_manipulators
+	
 [submodule "interbotix_ros_core"]
 	path = interbotix_ros_core
 	url = https://github.com/Interbotix/interbotix_ros_core
 
 [submodule "realsense-ros"]
-	path = code/src/realsense-ros
+	path = realsense-ros
 	url = https://github.com/IntelRealSense/realsense-ros
   	branch = ros2-development
   
@@ -37,3 +37,18 @@
 	path = code/src/apriltag_ros
 	url = https://github.com/wep21/apriltag_ros
 	branch = ros2-port
+[submodule "apriltag_msgs"]
+	path = apriltag_msgs
+	url = https://github.com/christianrauch/apriltag_msgs
+[submodule "vision_opencv"]
+	path = vision_opencv
+	url = https://github.com/ros-perception/vision_opencv
+[submodule "apriltag"]
+	path = apriltag
+	url = https://github.com/AprilRobotics/apriltag
+[submodule "moveit_visual_tools"]
+	path = moveit_visual_tools
+	url = https://github.com/ros-planning/moveit_visual_tools
+[submodule "apriltag_ros"]
+	path = apriltag_ros
+	url = https://github.com/wep21/apriltag_ros
