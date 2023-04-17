@@ -17,7 +17,7 @@ git clone https://github.com/orjano-max/uia_husky_vx300
 Go into cloned git folder
 
 ~~~bash
-cd ORJANOS_MASTER_REPO
+cd uia_husky_vx300
 ~~~
 
 Update the submodules of this repo, there are alot of them
@@ -36,7 +36,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 Go back to the root folder of the git repository
 
 ~~~bash
-cd ORJANOS_MASTER_REPO
+cd uia_husky_vx300
 ~~~
 
 Run rosdep
