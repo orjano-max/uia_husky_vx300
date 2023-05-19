@@ -8,6 +8,14 @@ This repository can be used to set up an Interbotix vx300 manipulator with movei
 ## Installation
 Open terminal.
 
+Create a ws folder and move into it
+
+~~~bash
+mkdir ros2_ws
+mkdir src
+cd ros2_ws/src
+~~~
+
 Clone this repo
 
 ~~~bash
@@ -28,21 +36,21 @@ git submodule update --init --recursive
 Run the following commands:
 
 ~~~bash
-cd code/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk
+cd interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk
 sudo cp 99-interbotix-udev.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ~~~
 
-Go back to the root folder of the git repository
+Go back to the ws folder
 
 ~~~bash
-cd uia_husky_vx300
+cd ros2_ws
 ~~~
 
 Run rosdep
 
 ~~~bash
-rosdep install --from-path code/src --ignore-src --rosdistro galactic -y
+rosdep install --from-path src --ignore-src --rosdistro galactic -y
 ~~~
 
 Install python-modern-robotics, somehow, this package is not a part of the interbotix rosdep
