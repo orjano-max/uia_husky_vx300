@@ -17,17 +17,6 @@ def generate_launch_description():
                 [FindPackageShare("husky_interbotix"), "srdf", "interbotix_srdf_extras.srdf"]
     )
           
-    # Launch Realsense camera
-    launch_realsense_camera = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution(
-            [FindPackageShare('realsense2_camera'), 'launch', 'rs_launch.py']))
-    )
-
-    # Launch continuous detection
-    launch_apriltag_continuous_detection = IncludeLaunchDescription(
-        XMLLaunchDescriptionSource(PathJoinSubstitution(
-            [FindPackageShare('husky_interbotix'), 'launch', 'continuous_detection.launch.xml'])),
-    )
 
     launch_interbotix_moveit = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution(
@@ -35,7 +24,7 @@ def generate_launch_description():
             launch_arguments ={
             'robot_model' : 'vx300',
             'hardware_type' : 'fake',
-            'use_moveit_rviz' : 'false',
+            'use_moveit_rviz' : 'true',
             'external_urdf_loc' : interbotix_urdf_extras_path,
             'external_srdf_loc' : interbotix_srdf_extras_path,
             'show_gripper_fingers' : 'true',
@@ -56,6 +45,7 @@ def generate_launch_description():
         executable="static_transform_publisher",
         arguments = ["0.0", "0.0", "-0.0", "0", "0", "0", "case", "case_link"],
     )
+
 
     # Publish scene geometry
     launch_scene_geometry_publisher = IncludeLaunchDescription(
@@ -85,17 +75,13 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # Launch Interbotix arm with moveit
-    ld.add_action(launch_interbotix_moveit)
     ld.add_action(node_tf_manipulator)
     ld.add_action(node_tf_case)
+    ld.add_action(launch_interbotix_moveit)
     # Publish scene
     ld.add_action(launch_scene_geometry_publisher)
 
-    # Launch Realsense camera
-    ld.add_action(launch_realsense_camera)
-
-    # Launch Apriltag
-    ld.add_action(launch_apriltag_continuous_detection)
+    
 
     #Launch pick and place node
     ld.add_action(launch_pick_and_place)
